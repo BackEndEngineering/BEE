@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href="https://bootswatch.com/spacelab/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'Beehive/styles/Beehive.css' %}" rel="stylesheet">
+    {% bootstrap_javascript %}
+    <title>Beehive Home</title>
+    <link rel="icon" href="#">
+    <style>
+      body {
+        background-color: rgb(238, 238, 238);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron ">
+      <h1 class="text-center">Back-End Engineering</h1>
+      <a href="/Beehive/" class="">
+        <img class="center-block" src="{% static 'Beehive/Bee.png' %}" alt="Mothers Best Friend logo" height="303" width="400">
+      </a>
+      <div class="row-offset text-center">
+        <a href="/login/" class="btn btn-primary btn-lg">Login</a>
+        <a href="/Beehive/create-account/" class="btn btn-primary btn-lg">Create Account</a>
+      </div>
+    </div>
+
+
+  </body>
+</html>

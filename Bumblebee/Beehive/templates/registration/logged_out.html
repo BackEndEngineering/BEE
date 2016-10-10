@@ -1,0 +1,31 @@
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link href="https://bootswatch.com/spacelab/bootstrap.min.css" rel="stylesheet">
+  {% bootstrap_javascript %}
+  <title>{% block title %}Beehive Logged Out{% endblock %}</title>
+  <link rel="icon" href="{% static 'Beehive/Beehive.ico' %}">
+</head>
+
+{% block content %}
+
+<h1></h1>
+<div class="row">
+<div class="col-lg-4 col-lg-offset-4">
+<div class="well bs-component">
+<h4 class="text-center">You have been logged out.</h4>
+<a href="{% url 'login' %}" class="btn btn-primary col-lg-offset-5">Login</a>
+</div>
+</div>
+</div>
+
+{% endblock %}

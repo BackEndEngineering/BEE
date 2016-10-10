@@ -1,4 +1,22 @@
-{% extends "Beehive/base.html" %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link href="https://bootswatch.com/spacelab/bootstrap.min.css" rel="stylesheet">
+  <link href="{% static 'Beehive/styles/Beehive.css' %}" rel="stylesheet">
+  {% bootstrap_javascript %}
+  {% bootstrap_messages %}
+  <title>{% block title %}Beehive Login{% endblock %}</title>
+  <link rel="icon" href="{% static 'Beehive/bee.png' %}">
+</head>
 
 {% block content %}
 
@@ -14,25 +32,32 @@
     <p>Please login to see this page.</p>
     {% endif %}
 {% endif %}
+<div class="row row-offset">
+<div class="col-lg-4 col-lg-offset-4">
+<div class="well bs-component">
+<form action="{% url 'login' %}" method="post" class="form-horizontal">
+  <fieldset>
+  <legend>Login to the Beehive</legend>
+  {% csrf_token %}
+  {% bootstrap_form form layout='inline' %}
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
-
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
+  {% buttons %}
+  <p class="text-center">
+    <button type="submit" class="btn btn-primary ">Submit</button>
+    <button type="reset" class="btn btn-default ">Reset</button>
+    <a href="#home" class="btn btn-danger">Cancel</a>
+  </p>
+  <p class="text-center">
+    <a href="{% url 'password_reset' %}" class="">Lost password?</a>
+  </p>
+  <p class="text-center">
+    <a href="{% url 'Beehive:create-account' %}" class="">Create an account</a>
+  </p>
+  {% endbuttons %}
+  </fieldset>
 </form>
-
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+</div>
+</div>
+</div>
 
 {% endblock %}
