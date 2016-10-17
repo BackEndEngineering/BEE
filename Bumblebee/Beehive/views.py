@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Article
+from .models import Article, Skill
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -33,11 +33,26 @@ def create_user(request):
                   'user_form': user_form,
                   'family_form': family_form})
 
+def skill(request):
+    recent_skills = Skill.objects.order_by('-publish_date')[:10]
+    context = {'recent_skills': recent_skills}
+    return render(request, 'Beehive/skill.html', context)
+
+def view_skill(request, skill_id):
+
+    try:
+        skill = Skill.objects.get(pk=skill_id)
+    except Skill.DoesNotExist:
+        raise Http404("No such skill!")
+
+    return render(request, 'Beehive/skills.html', context)
+
+
 
 def index(request):
     recent_articles = Article.objects.order_by('-publish_date')[:10]
     context = {'recent_articles': recent_articles}
-    return render(request, 'Beehive/articles.html', context)
+    return render(request, 'Beehive/index.html', context)
 
 def view_article(request, article_id):
 
@@ -46,7 +61,7 @@ def view_article(request, article_id):
     except Article.DoesNotExist:
         raise Http404("No such article!")
 
-    return render(request, 'Beehive/article.html')
+    return render(request, 'Beehive/articles.html')
 
 def home(request):
     context = {}

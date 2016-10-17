@@ -1,8 +1,159 @@
-.row-offset{
-  margin-top: 30px;
-  margin-bottom: 30px
+body {
+    margin-top: 50px; /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background: url('https://images.freecreatives.com/wp-content/uploads/2016/03/19091026/Night-City-Texas-wallpaper1.jpg') no-repeat center center fixed;
+
 }
-.row-offset-60{
-  margin-top: 60px;
-  margin-bottom: 60px
+
+h1 {
+  color: #B88D6F;
+}
+
+p {
+  font-family: "Playfair Display", serif;
+  font-size: 3em;
+
+  padding-top: .3em;
+  color: #B88D6F;
+  margin-top: 0;
+}
+h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 10em;
+  text-align: center;
+  padding-top: .3em;
+  color: #B88D6F;
+  margin-top: 0;
+}
+h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 5em;
+  text-align: center;
+  padding-top: .3em;
+  color: #B88D6F;
+  margin-top: 0;
+}
+
+.progress {
+  position:relative;
+  margin-bottom:15px;
+  width:100%;
+  height:35px;
+}
+
+.progress-bar {
+  text-align:left;
+  font-weight:bold;
+  font-size:23px;
+}
+.center-block {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+@import url(http://devsarray.com.ar/hernan/reset.css);
+body{
+	width:100%;
+	height:300px;
+	position:absolute;
+
+	background-color:#666;
+}
+.piopio{
+	position:relative;
+}
+#pajaro{
+	left:100%;
+	-moz-animation:volar 15s infinite;
+	-webkit-animation: volar 15s infinite;
+	-o-animation:volar 15s infinite;
+	-ms-animation:volar 15s infinite;
+	-khtml-animation:volar 15s infinite;
+	animation:volar 15s infinite;
+}
+@-moz-keyframes volar{
+	0%{
+		top:5px;
+	}25%{
+		top:100px;
+	}50%{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
+}
+@-webkit-keyframes volar{
+	0%{
+		margin-left:100%;
+		top:5px;
+	}25%{
+		top:100px;
+	}50%{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
+}
+@-o-keyframes volar{
+	0%{
+		top:5px;
+	}25%{
+		top:100px;
+	}50%{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
+}
+@-ms-keyframes volar{
+	0%{
+		top:5px;
+	}25%{
+		top:100px;
+	}50%{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
+}
+@-khtml-keyframes volar{
+	0%{
+		top:5px;
+	}25%{
+		top:100px;
+	}50%{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
+}
+@keyframes volar{
+	0%{
+		left:100%;
+		top:5px;
+	}25%{
+		top:100px;
+	}50px{
+		top:80px;
+	}75%{
+		top:25px;
+	}100%{
+		left:-177px;
+		top:102px;
+	}
 }

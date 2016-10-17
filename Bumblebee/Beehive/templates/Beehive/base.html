@@ -13,15 +13,20 @@
   <link href="https://bootswatch.com/spacelab/bootstrap.min.css" rel="stylesheet">
   <link href="{% static 'Beehive/styles/Beehive.css' %}" rel="stylesheet">
   {% bootstrap_javascript %}
-  <title>{% block title %}Beehive Dashboard{% endblock %}</title>
+  <title>{% block title %}Portfolio{% endblock %}</title>
   <link rel="icon" href="{% static 'Beehive/Bee.png' %}">
+  <link href="{% static 'Beehive/styles/animate.css' %}" rel="stylesheet">
+  <link href="{% static 'Beehive/styles/Bootstrap-social.css' %}" rel="stylesheet">
+  <link href="{% static 'Beehive/styles/font-awesome.css' %}" rel="stylesheet">
 </head>
 
 <body>
 
-  <nav class="navbar navbar-default">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
+
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -32,17 +37,50 @@
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-        <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account<span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#Beehive:create-caretaker">Add a Caretaker</a></li>
-              <li><a href="#url Beehive:create-child">Add a Child</a></li>
+        <ul class="nav navbar-nav ">
+
+
+              <li><a href="#Beehive:about">About</a></li>
+              <li><a href="#url Beehive:resume">Resume</a></li>
+              <li><a href="#url Beehive:contact">Contact</a></li>
+
 
               <!--<li class="divider"></li>-->
             </ul>
+
           </li>
         </ul>
+
+
+        <div class='center-align' style="padding-top: 10px">
+            <ul class="nav navbar-nav navbar-right">
+
+                <a href="img/David_Villarreal_Resume.pdf" class="waves-effect waves-light btn" download='David_Villarreal_Resume.pdf'>
+                  <i class="fa fa-download"></i>
+                  Resume
+                </a>
+                <a href="https://twitter.com/Flashwave" class="btn btn-social-icon btn-twitter">
+                    <span class="fa fa-twitter"></span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/drtechnology" class="btn btn-social-icon btn-linkedin">
+                    <span class="fa fa-linkedin"></span>
+                  </a>
+                  <a href="https://www.facebook.com/david.villarreal.9693" class="btn btn-social-icon btn-facebook">
+                    <span class="fa fa-facebook"></span>
+                  </a>
+                  <a href="https://www.instagram.com/davidc.villarreal" class="btn btn-social-icon btn-instagram">
+                    <span class="fa fa-instagram"></span>
+                  </a>
+                  <a href="https://github.com/BackEndEngineering" class="btn btn-social-icon btn-github">
+                    <span class="fa fa-github"></span>
+                  </a>
+                </nav>
+            </ul>
+          </div>
+        </nav>
+
+  </div>
+</nav>
         <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
             <!-- <li style="padding-top: 17px; padding-bottom: 13px">User: {{ user.get_username|capfirst }}</li> -->
@@ -51,16 +89,123 @@
             <li><a href="{% url 'login' %}">Login</a></li>
           {% endif %}
         </ul>
+
+
       </div>
+
     </div>
-  </nav>
+
+
+
+
 
   <div class="container">
 
     <div class="starter-template">
+
     {% block content %}{% endblock %}
     </div>
-
   </div>
+  <div>
+  <img src="http://s15.postimage.org/kozhy0eon/pajaro.gif" id="pajaro" class="piopio">
+</div>
+<div>
+<img src="http://www.picgifs.com/graphics/b/birds/graphics-birds-934496.gif" id="pajaro" class="piopio">
+</div>
+  <div class='center-block'>
+                        <img src="{% static 'Beehive/Bee.png' %}" class="animated hinge img-circle" alt="Responsive image">
+                    </div>
+    <div class='container'>
+      <div class='row'>
+        <div class="col s12">
+
+              <i class='material-icons small'>assessment</i>
+            </div>
+            <h4 class="center default_color_header">SKILLS</h4>
+          </div>
+          <div class="progress">
+
+            <div class="animated slideInLeft progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+    40% PostgreSQL
+  </div>
+</div>
+<div class="progress">
+  <div class="animated slideInLeft progress-bar progress-bar-striped" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+    60% HTML
+  </div>
+</div>
+<div class="progress">
+  <div class="animated slideInLeft progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+    50% Python
+  </div>
+</div>
+<div class="progress">
+  <div class="animated slideInLeft progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    30% Django
+  </div>
+</div>
+<div class="progress">
+  <div class="animated slideInLeft progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+    30% CSS
+  </div>
+</div>
+
+
+                <h4 class="center default_color_header">OtherSKILLS</h4>
+              </div>
+                </div>
+
+
+  <div class="row">
+  <div class="col-xs-6 col-sm-3"><p class="skill-title center">
+    Tech Experience
+  </p><ul style="list-style-type:none">
+    <li>Object-Oriented Design</li>
+    <li>Building RESTful APIs</li>
+    <li>MVC Fundamentals</li>
+    <li>Multithreading</li>
+    <li>Webscraping</li>
+    <li>Markdown</li>
+    <li>Heroku</li>
+    <li>Github</li>
+    <li>JSON</li>
+    <li>Git</li>
+  </ul></div>
+  <div class="col-xs-6 col-sm-3"><p class="skill-title center">
+    Software
+  </p>
+  <ul style="list-style-type:none">
+    <li>Sublime Text</li>
+    <li>MacDown</li>
+    <li>Brackets</li>
+    <li>Postman</li>
+    <li>ZSH</li>
+  </ul></div>
+  <div class="col-xs-6 col-sm-3"><p class="skill-title center">
+    Databases
+  </p>
+  <ul style="list-style-type:none">
+    <li>Relational Databases</li>
+    <li>PostgreSQL</li>
+    <li>SQLite3</li>
+    <li>Redis</li>
+  </ul></div>
+  <div class="col-xs-6 col-sm-3"><p class="skill-title center">
+    Frameworks
+  </p>
+  <ul style="list-style-type:none">
+    <li>Materialize</li>
+    <li>Bootstrap</li>
+    <li>Sinatra</li>
+  </ul></div>
+
+</div>
+  <address>
+  <strong>David C. Villarreal</strong><br>
+  321 Crestview Dr.<br>
+  San Antonio, TX 78201<br>
+  <abbr title="Phone">P:</abbr> (210) 887-4112
+  <a href="mailto:#">DavidVillarreal@BackEndEngineering.com</a>
+</address>
 </body>
 </html>
